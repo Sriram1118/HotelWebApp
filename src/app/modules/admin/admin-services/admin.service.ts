@@ -2,8 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UsageStorageService } from '../../../auth/services/usage/usage-storage.service';
+import { environement } from '../../../../environments/environment';
 
-const BASIC_URL = "http://localhost:8080/";
+const BASIC_URL= environement.BACKEND_URL;
 
 @Injectable({
   providedIn: 'root'
@@ -61,12 +62,5 @@ export class AdminService {
       'Bearer ' + UsageStorageService.getToken()
     )
   }
-
-
-
-
-
-
-
 
 }
